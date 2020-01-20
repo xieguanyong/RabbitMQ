@@ -44,7 +44,8 @@ RabbitMQ是一个开源的消息代理和队列服务器，用来通过普通协
 ## 2、RabbitMQ整合SpringBoot2.x,消息可靠性传递方案100%的实现
 ### 2.1、方案流程图
 ![image](https://github.com/suxiongwei/springboot-rabbitmq/blob/master/springboot-producer/src/main/resources/static/RabbitMQ2.jpg)
-###2.2、 代码实现
+### 2.2、 代码实现
+
 1. 引入相关依赖
 ```
 <dependency>
