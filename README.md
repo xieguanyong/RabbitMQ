@@ -1,19 +1,6 @@
 ## RabbitMQ简单介绍:
 RabbitMQ是一个开源的消息代理和队列服务器，用来通过普通协议在完全不同的应用之间传递数据，RabbitMQ是使用Erlang语言来编写的，并且RabbitMQ是基于AMQP协议的。
 
-> springboot 与 kafka的整合请参考我的另一个项目[springboot-kafka](https://github.com/suxiongwei/springboot-kafka)
-
-## 学习记录
-1. [RabbitMQ安装与配置](https://github.com/suxiongwei/suxiongwei.github.io/blob/master/article/other/rabbitmq_install.md)
-2. [RabbitMQ：消息发送确认与消息接收确认（ACK）](https://www.jianshu.com/p/2c5eebfd0e95)
-3. [消息中间件选型分析——从Kafka与RabbitMQ的对比来看全局](http://blog.didispace.com/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E9%80%89%E5%9E%8B%E5%88%86%E6%9E%90/)
-4. [RabbitMQ必备核心知识](http://www.imooc.com/article/75201)
-5. [Spring Boot 实现 RabbitMQ 延迟消费和延迟重试队列](https://www.cnblogs.com/xishuai/p/spring-boot-rabbitmq-delay-queue.html)
-6. [IM系统的MQ消息中间件选型：Kafka还是RabbitMQ？](https://zhuanlan.zhihu.com/p/37993013)
-7. [(转载)如何保证消息队列的高可用？](https://github.com/doocs/advanced-java/blob/master/docs/high-concurrency/how-to-ensure-high-availability-of-message-queues.md)
-8. [(转载)为什么使用消息队列？消息队列有什么优点和缺点？Kafka、ActiveMQ、RabbitMQ、RocketMQ 都有什么优点和缺点？](https://github.com/doocs/advanced-java/blob/master/docs/high-concurrency/why-mq.md)
-9. [(转载)如何保证消息的可靠性传输？（如何处理消息丢失的问题）](https://github.com/doocs/advanced-java/blob/master/docs/high-concurrency/how-to-ensure-the-reliable-transmission-of-messages.md)
-
 ## 特点：
 1. RabbitMQ底层使用Erlang语言编写，传递效率高，延迟低
 2. 开源、性能优秀、稳定性较高
@@ -33,10 +20,7 @@ RabbitMQ是一个开源的消息代理和队列服务器，用来通过普通协
 > RabbitMQ中有三种常用的交换机类型:<br/>
     direct: 如果路由键匹配，消息就投递到对应的队列<br/>
     fanout：投递消息给所有绑定在当前交换机上面的队列<br/>
-    topic：允许实现有趣的消息通信场景，使得5不同源头的消息能够达到同一个队列。topic队列名称有两个特殊的关键字。<br/>
-        * 可以替换一个单词<br/>
-        # 可以替换所有的单词
-
+    topic：允许实现有趣的消息通信场景，使得5不同源头的消息能够达到同一个队列。topic队列名称有两个特殊的关键字。
 - Binding：Exchange和Queue之间的虚拟连接，binding中可以包含routing key
 - Routing key：一个路由规则，虚拟机可用它来确定如何路由一个特定消息
 - Queue：也称为Message Queue，消息队列，保存消息并将它们转发给消费者，多个消费者可以订阅同一个Queue，这时Queue中的消息会被平均分摊给多个消费者进行处理，而不是每个消费者都收到所有的消息并处理。
@@ -135,11 +119,27 @@ CREATE TABLE `t_order` (
 
 ## 演示步骤:
 1. 修改配置文件中的rabbitmq配置和数据库配置
-2. run ConsumerApplication 来开启消费者服务
-3. run ProducerApplication 来开启生产者服务
-4. run SpringbootProducerApplicationTests 中的testSend方法来发送消息进行测试
-## 代码实例及学习参考内容来自慕课网课程[RabbitMQ消息中间件极速入门与实战](https://www.imooc.com/learn/1042)
 
+2. run ConsumerApplication 来开启消费者服务
+
+3. run ProducerApplication 来开启生产者服务
+
+4. run SpringbootProducerApplicationTests 中的testSend方法来发送消息进行测试
+
+   
+
+ 代码实例及学习参考内容来自慕课网课程[RabbitMQ消息中间件极速入门与实战](https://www.imooc.com/learn/1042)
+
+## 学习记录
+1. [RabbitMQ安装与配置](https://github.com/suxiongwei/suxiongwei.github.io/blob/master/article/other/rabbitmq_install.md)
+2. [RabbitMQ：消息发送确认与消息接收确认（ACK）](https://www.jianshu.com/p/2c5eebfd0e95)
+3. [消息中间件选型分析——从Kafka与RabbitMQ的对比来看全局](http://blog.didispace.com/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E9%80%89%E5%9E%8B%E5%88%86%E6%9E%90/)
+4. [RabbitMQ必备核心知识](http://www.imooc.com/article/75201)
+5. [Spring Boot 实现 RabbitMQ 延迟消费和延迟重试队列](https://www.cnblogs.com/xishuai/p/spring-boot-rabbitmq-delay-queue.html)
+6. [IM系统的MQ消息中间件选型：Kafka还是RabbitMQ？](https://zhuanlan.zhihu.com/p/37993013)
+7. [(转载)如何保证消息队列的高可用？](https://github.com/doocs/advanced-java/blob/master/docs/high-concurrency/how-to-ensure-high-availability-of-message-queues.md)
+8. [(转载)为什么使用消息队列？消息队列有什么优点和缺点？Kafka、ActiveMQ、RabbitMQ、RocketMQ 都有什么优点和缺点？](https://github.com/doocs/advanced-java/blob/master/docs/high-concurrency/why-mq.md)
+9. [(转载)如何保证消息的可靠性传输？（如何处理消息丢失的问题）](https://github.com/doocs/advanced-java/blob/master/docs/high-concurrency/how-to-ensure-the-reliable-transmission-of-messages.md)
 
 ## 其它
 ## RPC和MQ各自适合的应用场景

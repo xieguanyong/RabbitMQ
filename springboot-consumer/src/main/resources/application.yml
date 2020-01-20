@@ -1,7 +1,7 @@
 ## springboot整合rabbitmq的基本配置
 spring:
   rabbitmq:
-    addresses: 192.168.221.128:5672
+    addresses: 127.0.0.1:5672
     username: guest
     password: guest
     virtual-host: /
@@ -16,7 +16,7 @@ spring:
   datasource:
       url: jdbc:mysql://localhost:3306/rabbitmq?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
       username: root
-      password: root
+      password: 123456
       driverClassName: com.mysql.jdbc.Driver
 server:
   port: 8002
