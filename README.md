@@ -1,6 +1,7 @@
 ## 1、RabbitMQ简单介绍:
 
 RabbitMQ是一个开源的消息代理和队列服务器，用来通过普通协议在完全不同的应用之间传递数据，RabbitMQ是使用Erlang语言来编写的，并且RabbitMQ是基于AMQP协议的。
+推介一篇文章：[SpringBoot+RabbitMQ ，保证消息100%投递成功并被消费（附源码）](https://mp.weixin.qq.com/s/AgZiiDpkVyGod_nB8DrUvw)
 
 ### 1.1、特点：
 1. RabbitMQ底层使用Erlang语言编写，传递效率高，延迟低
